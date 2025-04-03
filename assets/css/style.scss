@@ -1,0 +1,50 @@
+// Imports
+@import 'config';
+//@import 'lightmode';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $body-color;
+    color: $color-font;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.container, header, footer {
+    width: 100%;
+    padding: 1rem;
+}
+
+.container, footer {
+    text-align: center;
+}
+
+h1 {
+    color: $color-title;
+}
+
+a {
+    text-decoration: none;
+    color: $color-title;
+}
+
+.photo-cv {
+    width: 30%;
+}
+
+.section-contact {
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+        
+        div {
+            margin: 0 auto;
+        }
+    }
+}

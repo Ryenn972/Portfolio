@@ -1,0 +1,71 @@
+<main class="container">
+    <section class="section-introduction" id="introduction">
+        <h2>Hello, je m'appelle <?= htmlspecialchars($user->getFirstname()) ?> <?= htmlspecialchars($user->getLastname()) ?></h2>
+        
+        <article class="article-introduction">
+            <div>
+                <p><?= htmlspecialchars($user->getProfileDescription()) ?></p>
+            </div>
+            
+            <img src="assets/img/<?= htmlspecialchars($user->getProfilePicture()) ?>" alt="Photo de profil" class="photo-cv">
+        </article>
+    </section>
+    
+    <section class="section-projects" id="projects">
+        <h2>Projects</h2>
+        <p>Mes projets ouaiiis</p>
+    </section>
+    
+    <section class="section-skills" id="skills">
+        <h2>Skills</h2>
+        <article class="article-webdev">
+            <h3>Web-Development</h3>
+            <p>Blabla je suis la compétence youpi</p>
+        </article>
+        
+        <article class="article-softskills">
+            <h3>Soft skills</h3>
+            <p>Blabla je suis la compétence transversale yay</p>
+        </article>
+    </section>
+    
+    <section class="section-contact" id="contact">
+        <h2>Contact</h2>
+        <form method="POST">
+            <div>
+                <label for="name">Name :</label>
+                <input type="text" name="name" placeholder="Ex: Jean">
+            </div>
+            
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" name="email" placeholder="Ex: jean@example.com">
+            </div>
+            
+            <div>
+                <label for="message">Message</label>
+                <textarea name="commentaires" placeholder="Your message"></textarea>
+            </div>
+            
+            <button>Send</button>
+        </form>
+    </section>
+    
+    <section class="section-networks" id="networks">
+        <h2>Social Networks</h2>
+        <nav>
+            <a href="https://www.linkedin.com/in/ryenn-mith-catan/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/Ryenn972" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </nav>
+    </section>
+    
+    <section class="section-navbar">
+        <nav>
+            <a href="#introduction" title="About me"><i class="fa-solid fa-address-card"></i></a>
+            <a href="#projects" title="My projects"><i class="fa-solid fa-laptop-code"></i></a>
+            <a href="#skills" title="My skills"><i class="fa-solid fa-graduation-cap"></i></a>
+            <a href="#contact" title="To contact me"><i class="fa-solid fa-comment-dots"></i></a>
+            <a href="#networks" title="My social networks"><i class="fa-solid fa-thumbs-up"></i></a>
+        </nav>
+    </section>
+</main>
