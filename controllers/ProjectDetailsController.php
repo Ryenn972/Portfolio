@@ -2,7 +2,7 @@
 
 namespace Controllers;
 
-class HomeController{
+class ProjectDetailsController{
     
     public function display(){
         
@@ -13,14 +13,8 @@ class HomeController{
         $projectRepo = new \Repositories\ProjectRepository();
         $projectsArray = $projectRepo->getAllProjects();
         
-        $hardSkillsRepo = new \Repositories\HardSkillsRepository();
-        $hardSkillsArray = $hardSkillsRepo->getAllHardSkills();
-        
-        $softSkillsRepo = new \Repositories\SoftSkillsRepository();
-        $softSkillsArray = $softSkillsRepo->getAllSoftSkills();
-        
         // Où vais-je l'afficher ? 
-        $template = 'home';
+        $template = 'project_details';
         require 'views/layout.phtml';
     }
 }

@@ -2,14 +2,10 @@
 
 // Remplacer par un autoloader qui gère les namespaces
 require 'config/database.php';
-// require 'controllers/HomeController.php';
-// require 'repositories/UserRepository.php';
-// require 'models/User.php';
 
 spl_autoload_register(function ($class) {
     
     require str_replace('\\', '/', lcfirst($class)).'.php';
-
     
 });
 
@@ -25,8 +21,17 @@ if(isset($_GET['route'])){
             $controller = new Controllers\LoginController();
             $controller->display();
             break;
+        
+        case 'project_details':
+            $controller = new Controllers\ProjectDetailsController();
+            $controller->display();
+            break;
+                
         default:
             // Gérer la 404
+            // $controller = new Controllers\ErrorController();
+            // $controller->display();
+            // break:
     }
 }
 // Sinon on va sur la page d'accueil

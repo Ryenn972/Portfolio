@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1><?= htmlspecialchars($user->getFirstname()) ?>'s portfolio</h1>
-        <a>Login</a>
+        <a href="#"><i class="fa-solid fa-lock"></i></a>
     </header>
     
     <?php require $template.'.phtml' ?>
@@ -21,6 +21,7 @@
             <a href="#about">About me</a>
             <a href="#projects">Projects</a>
         </nav>
+        <p>© Ryenndev.com. All rights reserved</p>
     </footer>
 </body>
 </html>

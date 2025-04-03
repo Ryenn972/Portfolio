@@ -10,13 +10,13 @@
     
     <section class="section-projects" id="projects">
         <h2>Projects</h2>
-        <div class="div-projects">
+        <div class="div-projects cols-2">
         <?php foreach ($projectsArray as $project): ?>
             <article class="article-project">
                 <img src="assets/img/<?= htmlspecialchars($project->getProjectImg()) ?>" class="img-project" alt="Image du projet '<?= htmlspecialchars($project->getTitle()) ?>' ">
                 <div class="div-project">
                     <h3><?= htmlspecialchars($project->getTitle()) ?></h3>
-                    <a href="#" class="a-project">Discover</a>
+                    <a href="index.php?route=project_details" class="a-project">Discover</a>
                 </div>
             </article>
         <?php endforeach; ?>
@@ -27,12 +27,26 @@
         <h2>Skills</h2>
         <article class="article-webdev">
             <h3>Web-Development</h3>
-            <p>Blabla je suis la compétence youpi</p>
+            <div class="div-webdev">
+                <?php foreach ($hardSkillsArray as $hardSkill): ?>
+                    <div>
+                        <p><?= htmlspecialchars($hardSkill->getHardSkillName()) ?></p>
+                        <input type="range" id="webdevPercent" name="webdevPercent" min="0" max="100" value="<?= htmlspecialchars($hardSkill->getHardSkillPercentage()) ?>" step="10" disabled>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </article>
         
         <article class="article-softskills">
             <h3>Soft skills</h3>
-            <p>Blabla je suis la compétence transversale yay</p>
+            <div class="div-transversal">
+                <?php foreach ($softSkillsArray as $softSkill): ?>
+                    <div class="div-softskills">
+                        <p><?= htmlspecialchars($softSkill->getSoftSkillName()) ?></p>
+                        <input type="range" id="softskillsPercent" name="softskillsPercent" min="0" max="100" value="<?= htmlspecialchars($softSkill->getSoftSkillPercentage()) ?>" step="10" disabled>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </article>
     </section>
     
@@ -50,7 +64,7 @@
             </div>
             
             <div>
-                <label for="message">Message</label>
+                <label for="message">Message :</label>
                 <textarea name="commentaires" placeholder="Your message"></textarea>
             </div>
             
@@ -61,18 +75,44 @@
     <section class="section-networks" id="networks">
         <h2>Social Networks</h2>
         <nav>
-            <a href="https://www.linkedin.com/in/ryenn-mith-catan/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/Ryenn972" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <div>
+                <a href="https://www.linkedin.com/in/ryenn-mith-catan/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <p>LinkedIn</p>
+            </div>
+            
+            <div>
+                <a href="https://github.com/Ryenn972" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <p>GitHub</p>
+            </div>
         </nav>
     </section>
     
     <section class="section-navbar">
         <nav>
-            <a href="#introduction" title="About me"><i class="fa-solid fa-address-card"></i></a>
-            <a href="#projects" title="My projects"><i class="fa-solid fa-laptop-code"></i></a>
-            <a href="#skills" title="My skills"><i class="fa-solid fa-graduation-cap"></i></a>
-            <a href="#contact" title="To contact me"><i class="fa-solid fa-comment-dots"></i></a>
-            <a href="#networks" title="My social networks"><i class="fa-solid fa-thumbs-up"></i></a>
+            <div>
+                <a href="#introduction" title="About me"><i class="fa-solid fa-address-card"></i></a>
+                <p>About</p>
+            </div>
+            
+            <div>
+                <a href="#projects" title="My projects"><i class="fa-solid fa-laptop-code"></i></a>
+                <p>Projects</p>
+            </div>
+            
+            <div>
+                <a href="#skills" title="My skills"><i class="fa-solid fa-graduation-cap"></i></a>
+                <p>Skills</p>
+            </div>
+            
+            <div>
+                <a href="#contact" title="To contact me"><i class="fa-solid fa-comment-dots"></i></a>
+                <p>Contact</p>
+            </div>
+            
+            <div>
+                <a href="#networks" title="My social networks"><i class="fa-solid fa-thumbs-up"></i></a>
+                <p>Networks</p>
+            </div>
         </nav>
     </section>
 </main>

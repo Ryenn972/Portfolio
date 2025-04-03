@@ -1,3 +1,43 @@
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  [class*=cols-] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+  }
+  .cols-2 > * {
+    width: 49.5%;
+  }
+  .cols-3 > * {
+    width: 33%;
+  }
+  .cols-4 > * {
+    width: 24.75%;
+  }
+  .cols-5 > * {
+    width: 19.8%;
+  }
+  .cols-6 > * {
+    width: 16.5%;
+  }
+  .cols-7 > * {
+    width: 14.1428571429%;
+  }
+  .cols-8 > * {
+    width: 12.375%;
+  }
+  .cols-9 > * {
+    width: 11%;
+  }
+  .cols-10 > * {
+    width: 9.9%;
+  }
+  .cols-11 > * {
+    width: 9%;
+  }
+  .cols-12 > * {
+    width: 8.25%;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -10,29 +50,37 @@ body {
   width: 100%;
   padding: 5rem;
 }
-body h1 {
-  font-size: 3em;
-  color: rgb(255, 212, 0);
-  margin: 0;
-}
 body h2 {
-  font-size: 4em;
+  font-size: 4.5em;
 }
 body h3 {
-  font-size: 2.5em;
+  font-size: 3em;
 }
 body a {
   text-decoration: none;
   color: rgb(255, 212, 0);
+}
+body i:hover {
+  color: rgb(215, 172, 0);
 }
 
 header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5em;
+  align-items: center;
+}
+header h1 {
+  font-size: 3em;
+  color: rgb(255, 212, 0);
+  margin: 0;
+}
+header a {
+  font-size: 3em;
 }
 
-.container, footer {
+.container,
+footer {
   text-align: center;
 }
 
@@ -43,23 +91,17 @@ header {
 }
 .section-introduction .article-introduction p {
   font-size: 1.5em;
-  text-align: justify;
+  text-align: center;
 }
 
 .section-projects {
   margin-top: 10em;
 }
-.section-projects .div-projects {
-  display: flex;
-  justify-content: center;
-  gap: 3em;
-  flex-wrap: wrap;
-}
 .section-projects .div-projects .article-project {
   border-radius: 1em;
   border: 1px solid;
-  width: 45%;
-  height: auto;
+  width: 100%;
+  margin-bottom: 4em;
 }
 .section-projects .div-projects .article-project .img-project {
   width: 100%;
@@ -77,11 +119,53 @@ header {
   color: rgb(31, 31, 31);
   border-radius: 1em;
   padding: 0.7em 1em;
-  font-size: 1.5em;
+  font-size: 1.8em;
+}
+.section-projects .div-projects .article-project .div-project .a-project:hover {
+  background-color: rgb(215, 172, 0);
 }
 
 .section-skills {
-  margin-top: 10em;
+  margin-top: 6em;
+}
+.section-skills h3 {
+  color: rgb(255, 212, 0);
+}
+.section-skills .article-webdev {
+  margin-top: 7em;
+  background-color: rgb(61, 61, 61);
+  padding: 2em 2em 5em;
+  border-radius: 3em;
+}
+.section-skills .article-webdev .div-webdev {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 3em;
+}
+.section-skills .article-webdev .div-webdev div {
+  width: 45%;
+}
+.section-skills .article-webdev .div-webdev div p {
+  font-size: 3em;
+}
+.section-skills .article-softskills {
+  margin-top: 7em;
+  background-color: rgb(61, 61, 61);
+  padding: 2em 2em 5em;
+  border-radius: 3em;
+}
+.section-skills .article-softskills .div-transversal {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+.section-skills .article-softskills .div-transversal div {
+  width: 45%;
+}
+.section-skills .article-softskills .div-transversal div p {
+  font-size: 2.95em;
 }
 
 .section-contact {
@@ -90,15 +174,83 @@ header {
 .section-contact form {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+  font-size: 3em;
   gap: 1.5em;
 }
 .section-contact form div {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  text-align: left;
+}
+.section-contact form div input {
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 1em;
+}
+.section-contact form div textarea {
+  font-size: 1.35em;
+  padding: 0.5em 1em 8em;
+  border-radius: 1em;
+}
+.section-contact form button {
+  font-size: 1em;
+  padding: 0.5em 0.8em;
+  background-color: rgb(255, 212, 0);
+  border-radius: 0.7em;
+  color: rgb(31, 31, 31);
+}
+.section-contact form button:hover {
+  background-color: rgb(215, 172, 0);
 }
 
 .section-networks {
   margin-top: 10em;
+}
+.section-networks nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(61, 61, 61);
+  padding: 4em 0em;
+  border-radius: 1em;
+}
+.section-networks nav i {
+  font-size: 6em;
+}
+.section-networks nav p {
+  font-size: 3em;
+  margin-top: 0.3em;
+  margin-bottom: 0;
+}
+
+.section-navbar {
+  margin-top: 10em;
+  margin-bottom: 2em;
+  position: sticky;
+  bottom: 8em;
+  background-color: rgb(81, 81, 81);
+  padding: 5em 0em;
+  border-radius: 2em;
+}
+.section-navbar nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+.section-navbar nav i {
+  font-size: 4em;
+}
+.section-navbar nav p {
+  font-size: 1.7em;
+  margin-bottom: 0;
+}
+
+footer {
+  border-top: solid 1px rgb(200, 200, 200);
+}
+footer p {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
