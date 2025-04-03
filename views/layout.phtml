@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <title>My portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="assets/img/portfolio-flaticon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
     <header>
         <h1><?= htmlspecialchars($user->getFirstname()) ?>'s portfolio</h1>
+        <a>Login</a>
     </header>
     
     <?php require $template.'.phtml' ?>
     
     <footer>
-        <h3>by Ryenn</h3>
+        <h3>by <?= htmlspecialchars($user->getFirstname()) ?></h3>
         <nav>
             <a href="#about">About me</a>
             <a href="#projects">Projects</a>

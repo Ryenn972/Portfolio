@@ -7,8 +7,11 @@ class HomeController{
     public function display(){
         
         // De quoi j'ai besoin ? (des données)
-        $repo = new \Repositories\UserRepository();
-        $user = $repo->getUserByEmail('ryenn.mith-catan@3wacademy.fr');
+        $userRepo = new \Repositories\UserRepository();
+        $user = $userRepo->getUserByEmail('ryenn.mith-catan@3wacademy.fr');
+        
+        $projectRepo = new \Repositories\ProjectRepository();
+        $projectsArray = $projectRepo->getAllProjects();
         
         // Où vais-je l'afficher ? 
         $template = 'home';

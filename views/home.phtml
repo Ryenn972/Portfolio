@@ -1,19 +1,26 @@
 <main class="container">
     <section class="section-introduction" id="introduction">
-        <h2>Hello, je m'appelle <?= htmlspecialchars($user->getFirstname()) ?> <?= htmlspecialchars($user->getLastname()) ?></h2>
+        <h2>Hi, I'm <?= htmlspecialchars($user->getFirstname()) ?> <?= htmlspecialchars($user->getLastname()) ?></h2>
         
         <article class="article-introduction">
-            <div>
-                <p><?= htmlspecialchars($user->getProfileDescription()) ?></p>
-            </div>
-            
             <img src="assets/img/<?= htmlspecialchars($user->getProfilePicture()) ?>" alt="Photo de profil" class="photo-cv">
+            <p><?= htmlspecialchars($user->getProfileDescription()) ?></p>
         </article>
     </section>
     
     <section class="section-projects" id="projects">
         <h2>Projects</h2>
-        <p>Mes projets ouaiiis</p>
+        <div class="div-projects">
+        <?php foreach ($projectsArray as $project): ?>
+            <article class="article-project">
+                <img src="assets/img/<?= htmlspecialchars($project->getProjectImg()) ?>" class="img-project" alt="Image du projet '<?= htmlspecialchars($project->getTitle()) ?>' ">
+                <div class="div-project">
+                    <h3><?= htmlspecialchars($project->getTitle()) ?></h3>
+                    <a href="#" class="a-project">Discover</a>
+                </div>
+            </article>
+        <?php endforeach; ?>
+        </div>
     </section>
     
     <section class="section-skills" id="skills">
