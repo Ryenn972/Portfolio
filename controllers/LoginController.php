@@ -6,7 +6,7 @@ class LoginController {
     
     public function display() {
         $userRepo = new \Repositories\UserRepository();
-        $user = $userRepo->getUserByEmail('ryenn.mith-catan@3wacademy.fr');
+        $user = $userRepo->getUserByEmail('');
         
         $template = 'login';
         require 'views/layout.phtml';
