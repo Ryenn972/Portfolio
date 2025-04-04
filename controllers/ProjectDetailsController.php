@@ -4,14 +4,14 @@ namespace Controllers;
 
 class ProjectDetailsController{
     
-    public function display(){
+    public function display(int $id){
         
         // De quoi j'ai besoin ? (des données)
         $userRepo = new \Repositories\UserRepository();
         $user = $userRepo->getUserByEmail('ryenn.mith-catan@3wacademy.fr');
         
         $projectRepo = new \Repositories\ProjectRepository();
-        $projectsArray = $projectRepo->getAllProjects();
+        $projectsArray = $projectRepo->getProjectById($id);
         
         // Où vais-je l'afficher ? 
         $template = 'project_details';

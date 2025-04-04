@@ -1,5 +1,4 @@
-<main class="container">
-    <section class="section-introduction" id="introduction">
+<section class="section-introduction" id="introduction">
         <h2>Hi, I'm <?= htmlspecialchars($user->getFirstname()) ?> <?= htmlspecialchars($user->getLastname()) ?></h2>
         
         <article class="article-introduction">
@@ -8,111 +7,120 @@
         </article>
     </section>
     
-    <section class="section-projects" id="projects">
-        <h2>Projects</h2>
-        <div class="div-projects cols-2">
-        <?php foreach ($projectsArray as $project): ?>
-            <article class="article-project">
-                <img src="assets/img/<?= htmlspecialchars($project->getProjectImg()) ?>" class="img-project" alt="Image du projet '<?= htmlspecialchars($project->getTitle()) ?>' ">
-                <div class="div-project">
-                    <h3><?= htmlspecialchars($project->getTitle()) ?></h3>
-                    <a href="index.php?route=project_details" class="a-project">Discover</a>
+<section class="section-projects" id="projects">
+    <h2>Projects</h2>
+    
+    <div class="div-projects cols-2">
+    <?php foreach ($projectsArray as $project): ?>
+        <article class="article-project">
+            <img src="assets/img/<?= htmlspecialchars($project->getProjectImg()) ?>" class="img-project" alt="Image du projet '<?= htmlspecialchars($project->getTitle()) ?>' ">
+            <div class="div-project">
+                <h3><?= htmlspecialchars($project->getTitle()) ?></h3>
+                <p class="p-categories">Category : <?= htmlspecialchars($project->getCategoryName()) ?></p>
+                
+                <div class="div-labels">
+                    <p>Labels :</p>
+                    <?php foreach ($project->getLabels() as $label): ?>
+                        <p class="labels"><?= htmlspecialchars($label['name']) ?></p>
+                    <?php endforeach; ?>
                 </div>
-            </article>
-        <?php endforeach; ?>
+                
+                <a href="index.php?route=project_details&id=<?= $project->getId() ?>" class="a-project">Discover</a>
+            </div>
+        </article>
+    <?php endforeach; ?>
+    </div>
+</section>
+
+<section class="section-skills" id="skills">
+    <h2>Skills</h2>
+    <article class="article-webdev">
+        <h3>Web-Development</h3>
+        <div class="div-webdev">
+            <?php foreach ($hardSkillsArray as $hardSkill): ?>
+                <div>
+                    <p><?= htmlspecialchars($hardSkill->getHardSkillName()) ?></p>
+                    <input type="range" id="webdevPercent" name="webdevPercent" min="0" max="100" value="<?= htmlspecialchars($hardSkill->getHardSkillPercentage()) ?>" step="10" disabled>
+                </div>
+            <?php endforeach; ?>
         </div>
-    </section>
+    </article>
     
-    <section class="section-skills" id="skills">
-        <h2>Skills</h2>
-        <article class="article-webdev">
-            <h3>Web-Development</h3>
-            <div class="div-webdev">
-                <?php foreach ($hardSkillsArray as $hardSkill): ?>
-                    <div>
-                        <p><?= htmlspecialchars($hardSkill->getHardSkillName()) ?></p>
-                        <input type="range" id="webdevPercent" name="webdevPercent" min="0" max="100" value="<?= htmlspecialchars($hardSkill->getHardSkillPercentage()) ?>" step="10" disabled>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </article>
+    <article class="article-softskills">
+        <h3>Soft skills</h3>
+        <div class="div-transversal">
+            <?php foreach ($softSkillsArray as $softSkill): ?>
+                <div class="div-softskills">
+                    <p><?= htmlspecialchars($softSkill->getSoftSkillName()) ?></p>
+                    <input type="range" id="softskillsPercent" name="softskillsPercent" min="0" max="100" value="<?= htmlspecialchars($softSkill->getSoftSkillPercentage()) ?>" step="10" disabled>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </article>
+</section>
+
+<section class="section-contact" id="contact">
+    <h2>Contact</h2>
+    <form method="POST">
+        <div>
+            <label for="name">Name :</label>
+            <input type="text" name="name" placeholder="Ex: Jean">
+        </div>
         
-        <article class="article-softskills">
-            <h3>Soft skills</h3>
-            <div class="div-transversal">
-                <?php foreach ($softSkillsArray as $softSkill): ?>
-                    <div class="div-softskills">
-                        <p><?= htmlspecialchars($softSkill->getSoftSkillName()) ?></p>
-                        <input type="range" id="softskillsPercent" name="softskillsPercent" min="0" max="100" value="<?= htmlspecialchars($softSkill->getSoftSkillPercentage()) ?>" step="10" disabled>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </article>
-    </section>
-    
-    <section class="section-contact" id="contact">
-        <h2>Contact</h2>
-        <form method="POST">
-            <div>
-                <label for="name">Name :</label>
-                <input type="text" name="name" placeholder="Ex: Jean">
-            </div>
-            
-            <div>
-                <label for="email">Email :</label>
-                <input type="email" name="email" placeholder="Ex: jean@example.com">
-            </div>
-            
-            <div>
-                <label for="message">Message :</label>
-                <textarea name="commentaires" placeholder="Your message"></textarea>
-            </div>
-            
-            <button>Send</button>
-        </form>
-    </section>
-    
-    <section class="section-networks" id="networks">
-        <h2>Social Networks</h2>
-        <nav>
-            <div>
-                <a href="https://www.linkedin.com/in/ryenn-mith-catan/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <p>LinkedIn</p>
-            </div>
-            
-            <div>
-                <a href="https://github.com/Ryenn972" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <p>GitHub</p>
-            </div>
-        </nav>
-    </section>
-    
-    <section class="section-navbar">
-        <nav>
-            <div>
-                <a href="#introduction" title="About me"><i class="fa-solid fa-address-card"></i></a>
-                <p>About</p>
-            </div>
-            
-            <div>
-                <a href="#projects" title="My projects"><i class="fa-solid fa-laptop-code"></i></a>
-                <p>Projects</p>
-            </div>
-            
-            <div>
-                <a href="#skills" title="My skills"><i class="fa-solid fa-graduation-cap"></i></a>
-                <p>Skills</p>
-            </div>
-            
-            <div>
-                <a href="#contact" title="To contact me"><i class="fa-solid fa-comment-dots"></i></a>
-                <p>Contact</p>
-            </div>
-            
-            <div>
-                <a href="#networks" title="My social networks"><i class="fa-solid fa-thumbs-up"></i></a>
-                <p>Networks</p>
-            </div>
-        </nav>
-    </section>
-</main>
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" name="email" placeholder="Ex: jean@example.com">
+        </div>
+        
+        <div>
+            <label for="message">Message :</label>
+            <textarea name="commentaires" placeholder="Your message"></textarea>
+        </div>
+        
+        <button>Send</button>
+    </form>
+</section>
+
+<section class="section-networks" id="networks">
+    <h2>Social Networks</h2>
+    <nav>
+        <div>
+            <a href="https://www.linkedin.com/in/ryenn-mith-catan/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <p>LinkedIn</p>
+        </div>
+        
+        <div>
+            <a href="https://github.com/Ryenn972" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <p>GitHub</p>
+        </div>
+    </nav>
+</section>
+
+<section class="section-navbar">
+    <nav>
+        <div>
+            <a href="#introduction" title="About me"><i class="fa-solid fa-address-card"></i></a>
+            <p>About</p>
+        </div>
+        
+        <div>
+            <a href="#projects" title="My projects"><i class="fa-solid fa-laptop-code"></i></a>
+            <p>Projects</p>
+        </div>
+        
+        <div>
+            <a href="#skills" title="My skills"><i class="fa-solid fa-graduation-cap"></i></a>
+            <p>Skills</p>
+        </div>
+        
+        <div>
+            <a href="#contact" title="To contact me"><i class="fa-solid fa-comment-dots"></i></a>
+            <p>Contact</p>
+        </div>
+        
+        <div>
+            <a href="#networks" title="My social networks"><i class="fa-solid fa-thumbs-up"></i></a>
+            <p>Networks</p>
+        </div>
+    </nav>
+</section>

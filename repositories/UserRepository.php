@@ -22,7 +22,7 @@ class UserRepository {
         return $user;
     }
     
-    public function updateUserByEmail (string $email):void{
+    public function check (string $email):void{
         
     }
 }

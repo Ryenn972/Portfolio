@@ -9,18 +9,16 @@
 </head>
 <body>
     <header>
-        <h1><?= htmlspecialchars($user->getFirstname()) ?>'s portfolio</h1>
-        <a href="#"><i class="fa-solid fa-lock"></i></a>
+        <a href="index.php?route=home"><h1><?= htmlspecialchars($user->getFirstname()) ?>'s portfolio</h1></a>
+        <a href="index.php?route=login"><i class="fa-solid fa-lock"></i></a>
     </header>
     
-    <?php require $template.'.phtml' ?>
+    <main class="container">
+        <?php require $template.'.phtml' ?>
+    </main>
     
     <footer>
         <h3>by <?= htmlspecialchars($user->getFirstname()) ?></h3>
-        <nav>
-            <a href="#about">About me</a>
-            <a href="#projects">Projects</a>
-        </nav>
         <p>© Ryenndev.com. All rights reserved</p>
     </footer>
 </body>

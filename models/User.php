@@ -58,7 +58,7 @@ class User {
         $this->profileDescription = $profileDescription;
     }
     
-    public function getBirthdate():date{
+    public function getBirthdate():string{
         return $this->birthdate;
     }
     

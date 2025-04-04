@@ -71,7 +71,7 @@ header {
   align-items: center;
 }
 header h1 {
-  font-size: 3em;
+  font-size: 1.2em;
   color: rgb(255, 212, 0);
   margin: 0;
 }
@@ -123,6 +123,25 @@ footer {
 }
 .section-projects .div-projects .article-project .div-project .a-project:hover {
   background-color: rgb(215, 172, 0);
+}
+.section-projects .div-projects .article-project .div-project .div-labels {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2em;
+  font-size: 2em;
+}
+.section-projects .div-projects .article-project .div-project .div-labels .labels {
+  background-color: rgb(255, 146, 30);
+  color: rgb(31, 31, 31);
+  border-radius: 1em;
+  padding: 0.5em;
+}
+.section-projects .div-projects .article-project .div-project p {
+  margin: 0;
+}
+.section-projects .div-projects .article-project .div-project .p-categories {
+  font-size: 2em;
+  margin-bottom: 2em;
 }
 
 .section-skills {
@@ -244,6 +263,28 @@ footer {
 .section-navbar nav p {
   font-size: 1.7em;
   margin-bottom: 0;
+}
+
+.section-details img {
+  width: 100%;
+  height: auto;
+}
+.section-details div {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2em;
+}
+.section-details div .labels {
+  background-color: rgb(255, 146, 30);
+  color: rgb(31, 31, 31);
+  border-radius: 1em;
+  padding: 0.5em;
+}
+.section-details > p {
+  font-size: 2em;
+}
+.section-details .p-desc {
+  font-size: 2em;
 }
 
 footer {

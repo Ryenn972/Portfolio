@@ -1,0 +1,10 @@
+<h2>Dashboard</h2>
+
+<h3>Your data</h3>
+<p>Edit</p>
+<img src="assets/img/<?= htmlspecialchars($user->getProfilePicture()) ?>" alt="Photo de profil" class="photo-cv">
+<p><?= htmlspecialchars($user->getFirstname()) ?> <?= htmlspecialchars($user->getLastname()) ?></p>
+<p><?= htmlspecialchars($user->getProfileDescription()) ?></p>
+<p><?= htmlspecialchars($user->getBirthdate()) ?></p>
+<p><?= htmlspecialchars($user->getEmail()) ?></p>
+<p><?= htmlspecialchars($user->getPhoneNumber()) ?></p>

@@ -8,7 +8,8 @@ class Project {
     private string $projectDescription;
     private string $projectImg;
     private string $projectLink;
-    private int $categoriesId;
+    private string $categoryName;
+    private array $labels;
     
     // Getter et setter pour toutes les propriétés
 
@@ -52,12 +53,20 @@ class Project {
         $this->projectLink = $projectLink;
     }
     
-    public function getCategoriesId():string{
-        return $this->categoriesId;
+    public function getCategoryName():string{
+        return $this->categoryName;
     }
     
-    public function setCategoriesId(string $categoriesId):void{
-        $this->categoriesId = $categoriesId;
+    public function setCategoryName(string $categoryName):void{
+        $this->categoryName = $categoryName;
+    }
+    
+    public function setLabels(array $labels):void{
+        $this->labels = $labels;
+    }
+    
+    public function getLabels():array{
+        return $this->labels;
     }
     
     public function sanitize(array $projectsData){
@@ -68,7 +77,7 @@ class Project {
         $this->projectDescription = $projectsData['description'];
         $this->projectImg = $projectsData['image_url'];
         $this->projectLink = $projectsData['link'];
-        $this->categoriesId = $projectsData['id_categories'];
+        $this->categoryName = $projectsData['id_categories'];
         
         return $this;
     }
