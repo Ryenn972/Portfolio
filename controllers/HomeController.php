@@ -8,7 +8,7 @@ class HomeController{
         
         // De quoi j'ai besoin ? (des données)
         $userRepo = new \Repositories\UserRepository();
-        $user = $userRepo->getUserByEmail('ryenn.mith-catan@3wacademy.fr');
+        $user = $userRepo->getUserByEmail('');
         
         $projectRepo = new \Repositories\ProjectRepository();
         $projectsArray = $projectRepo->getAllProjects();
