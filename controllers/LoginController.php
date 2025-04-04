@@ -15,8 +15,8 @@ class LoginController {
     public function login() {
         session_start();
         
-        $adminEmail = 'ryenn.mith-catan@3wacademy.fr';
-        $adminPassword = 'R01s02k07!';
+        $adminEmail = '';
+        $adminPassword = '';
         
         if (!isset($_POST['email'], $_POST['password'])) {
             header('Location: index.php?route=login&error1');
